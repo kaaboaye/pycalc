@@ -3,3 +3,4 @@
 
 def e(x):
     return pow(10, x)
+    
