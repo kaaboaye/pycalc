@@ -6,58 +6,54 @@ import math
 
 ## FUNCTIONS
 
-def e(x): # notacja wykłądnicza
+def e(x): # Notacja wykłądnicza
     return pow(10, x)
 
-def s(x): # silnia
+def s(x): # Silnia
     o = 1
     for i in range(1, x + 1):
         o *= i
-    return o
+    return int(o)
 
-def sn(n, k): # symbol newtona
-    return s(n)/(s(k)*s(n-k))
+def sn(n, k): # Symbol Newtona
+    return int(s(n)/(s(k)*s(n-k)))
 
-def C(k, n): # kombinacja
-    return sn(n, k)
+def C(k, n): # Kombinacja bez powtórzeń
+    return int(sn(n, k))
 
 def W(k, n): # Wariacja z powtórzeniami
-    return pow(n, k)
+    return int(pow(n, k))
 
 def V(k, n): # Wariacja bez powtórzeń
-    return s(n)/s(n-k)
+    return int(s(n)/s(n-k))
 
 ## CONSOLE
 
 def console():
     try:
         while True:
-            output = ""
-            ans = 0
-
             while True:
                 inp = input("> ")
                 if len(inp) > 0:
                     break
 
-            if inp[0] == "=":
-                inp = inp.replace("=", "")
-                ans = eval(inp)
-                print(ans)
-            else:
-                exec(inp)
+            ans = eval(inp)
+            print(ans)
 
     except EOFError:
         end()
     except KeyboardInterrupt:
         end()
     except:
-        print("Niepoprawne dane wejściowe")
-        print(sys.exc_info())
+        print("Niepoprawne dane wejściowe:")
+        print("    " + str(sys.exc_info()[1]))
         console()
 
 def end():
     print("\nZakończono")
     quit()
 
+# EXECUTE
+
+ans = 0
 console()
