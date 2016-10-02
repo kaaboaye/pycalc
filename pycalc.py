@@ -4,6 +4,8 @@
 import sys
 import math
 
+## FUNCTIONS
+
 def e(x): # notacja wykłądnicza
     return pow(10, x)
 
@@ -13,8 +15,19 @@ def s(x): # silnia
         o *= i
     return o
 
-def C(x, y): # kombinacja
-    return int(s(y) / ( s(x) * s(y - x) ))
+def sn(n, k): # symbol newtona
+    return s(n)/(s(k)*s(n-k))
+
+def C(k, n): # kombinacja
+    return sn(n, k)
+
+def W(k, n): # Wariacja z powtórzeniami
+    return pow(n, k)
+
+def V(k, n): # Wariacja bez powtórzeń
+    return s(n)/s(n-k)
+
+## CONSOLE
 
 def console():
     try:
