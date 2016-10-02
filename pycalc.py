@@ -53,7 +53,7 @@ def end():
     print("\nZakończono")
     quit()
 
-# EXECUTE
+## EXECUTE
 
 ans = 0
 console()
