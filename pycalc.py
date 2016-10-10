@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
-import math
+from sys import exc_info
+from math import *
 
 ## FUNCTIONS
 
@@ -46,7 +46,7 @@ def console():
         end()
     except:
         print("Niepoprawne dane wejściowe:")
-        print("    " + str(sys.exc_info()[1]))
+        print("    " + str(exc_info()[1]))
         console()
 
 def end():
