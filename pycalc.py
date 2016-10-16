@@ -27,6 +27,10 @@ def W(k, n): # Wariacja z powtórzeniami
 def V(k, n): # Wariacja bez powtórzeń
     return int(s(n)/s(n-k))
 
+## CONSTANT
+
+G = 6.674083131313131 * e(-11) # Stała grawitacji
+
 ## CONSOLE
 
 def console():
@@ -37,8 +41,12 @@ def console():
                 if len(inp) > 0:
                     break
 
-            ans = eval(inp)
-            print(ans)
+            if inp[0] == "`":
+                inp = inp.replace("`", "")
+                exec(inp)
+            else:
+                ans = eval(inp)
+                print(ans)
 
     except EOFError:
         end()
@@ -52,6 +60,7 @@ def console():
 def end():
     print("\nZakończono")
     quit()
+
 
 ## EXECUTE
 
